@@ -1,0 +1,253 @@
+//------------------------------------------------------------------------------
+//
+//  Macro definitions for main.c/ports.c/init.c/led.c/clocks.c
+//
+//
+//  Author: Evan Mason
+//  Jan 2020
+//  Built with IAR Embedded Workbench Version: V7.12.4
+//------------------------------------------------------------------------------
+
+//Project 10 additions
+#define FOUR            (4)
+#define FIVE            (5)
+#define START_UP        (0)
+#define IP_INFO         (1)
+#define CLR_BUFF        (2)
+#define CONFIG_WIFI     (3)
+#define WAITING         (4)
+#define LIL_DELAY       (3)
+#define LONG_DELAY      (40)
+#define PASSWORD        (0)
+#define DIRECTION       (1)
+#define REG_COMMAND     (2)
+#define BL_FOLLOW       (6)
+#define ARRIVED         (5)
+#define DURATION        (8)
+#define HUNNID          (5)
+#define TENNY           (6)
+#define ONEY            (7)
+#define MOVE            (3)
+#define FINAL           (4)
+#define A_SLIGHTLY_ARBITRARY_TIME (53)
+#define ANOTHER_SLIGHTLY_ARBITRARY_TIME (60)
+#define LIL_SPEEDY      (32000)
+#define LIL_MORE_SPEEDY (39000)
+#define ALMOST_SPEEDY   (33000)
+#define LIL_LESS_SPEEDY (29000)
+#define KINDA_SPEEDY    (25000)
+#define ADEQUATE_SPEED  (15000)
+#define JUST_ANOTHER_SPEED      (27000)
+#define LIKE_NOT_SLOW   (20000)
+#define MARGINALLY_SPEEDY       (22000)
+#define FINALLY_THE_END (24000)
+#define BL_START        (0)
+#define BL_INTERCEPT    (1)
+#define FIVE_SEC        (50)
+#define BL_INTERCEPTED  (2)
+#define BIG_THRESHOLD   (400)
+#define BL_TURN         (3)
+#define TWO_SEC         (22)
+#define BL_FOLLOW2      (4)
+#define SMALL_THRESHOLD (300)
+#define BL_TRAVEL       (5)
+#define FIFTEEN_SEC     (150)
+#define ELEVEN          (11)
+
+
+
+
+
+
+//main.c
+#define ALWAYS                  (1)
+#define TRUE                    (0x01)
+#define ONE                     (1)
+#define FALSE                   (0x00)
+#define RESET_STATE             (0x00)
+#define SET_HIGH                (0xFF)
+#define SET_LOW                 (0x00)
+#define RED_LED                 (0x01)             // RED LED 0
+#define GRN_LED                 (0x40)             // GREEN LED 1
+#define MCLK_FREQ_MHZ           (8)                // MCLK = 8MHz
+#define CLEAR_REGISTER          (0X0000)
+#define BLACK_LINE_LIMIT        (70)
+#define DETECT_STATE            (9)
+#define REV_SPEED               (11000)
+#define FOR_SPEED               (11000)
+#define WAIT1                   (15)
+#define WAIT2                   (10)
+#define WAIT3                   (20)
+#define WAIT4                   (12)
+#define WAIT5                   (13)
+//states
+#define WAIT                    (2)
+#define LINE_DETECT             (3)
+#define FOLLOW_LINE             (4)
+#define TRAVEL_END              (5)
+#define TURN_IN                 (6)
+#define TRAVEL_IN               (7)
+#define ORIENT                  (3)
+#define END                     (4)
+#define DELAY                   (20)
+#define CONFIGURE               (0)
+#define RECEIVED                (2)
+#define STRINGS                 (3)
+#define TRANSMIT                (4)
+#define BAUD                    (5)
+
+//states
+#define SPLASH                  (0)
+#define DISP                    (1)
+#define CONFIG                  (2)
+#define TRANS                   (3)
+#define RECEIVE                 (4)
+#define DISP_R                  (5)
+#define SPLASH_TIME             (30)
+#define BAUD_115                (0)
+#define BAUD_460                (1)
+#define CLEAR                   (0x00)
+
+
+//LCD Display Character Configurations
+#define CHAR_WIDTH              (4)     
+#define CHAR_LEN                (11)
+#define TOP_LINE                (0)
+#define MID_LINEA               (1)
+#define MID_LINEB               (2)
+#define BOT_LINE                (3)
+#define STRING_LEN              (11)
+
+//LED States
+#define LEDS_OFF1               (250)
+#define GON_ROFF                (200)
+#define GOFF_RON                (150)
+#define GON_RON                 (100)
+#define LEDS_OFF2               (50)
+
+//switches.c
+#define CIRCLE_FW               (100)
+#define CIRCLE_TURN             (103)
+#define CIRCLE_SWITCH           (120)
+#define CIRCLE_TURNS            (76)
+#define MAX_TIME                (63535)
+#define TRI_TURNS               (6)
+#define TRI_FW                  (100)
+#define TRI_TURN                (250)
+#define TRI_SWITCH              (421)
+#define FIG_FW                  (100)
+#define FIG_TURN                (103)
+#define FIG_SWITCH              (120)
+#define FIG_TURNS               (43)
+#define NUM_CIRCLES             (4)
+#define USE_GPIO                (0x00)
+#define USE_SMCLK               (0x01)
+
+//timers.c
+#define TB1CCR0_INTERVAL        (50000)   // 8,000,000 / 2 / 8 / (1 / 100msec)
+#define TB0CCR0_INTERVAL        (50000)   // 8,000,000 / 2 / 8 / (1 / 100msec)
+#define TB0CCR1_INTERVAL        (5000000)   // 8,000,000 / 2 / 8 / (1 / 1sec)
+#define RIGHT_FORWARD_SPEED     (TB3CCR1) //TimerB3 - CCR1
+#define LEFT_FORWARD_SPEED      (TB3CCR2) //TimerB3 - CCR2
+#define RIGHT_REVERSE_SPEED     (TB3CCR3) //TimerB3 - CCR3
+#define LEFT_REVERSE_SPEED      (TB3CCR4) //TimerB3 - CCR4
+#define WHEEL_PERIOD            (40000) 
+#define WHEEL_OFF               (0x00)
+
+//interrupt_timers.c
+#define   MAX_CASES             (14)
+#define   NO_INTR               (0x00)
+#define   CCR_ONE               (0x01)
+#define   CCR_TWO               (0x02)
+#define   OVERFLOW              (14)
+#define   FORWARD1              (1)
+#define   STOP1                 (7)
+#define   REVERSE               (3)
+#define   STOP2                 (10)
+#define   FORWARD2              (6)
+#define   STOP3                 (7)
+#define   CLOCKWISE             (8)
+#define   STOP4                 (11)
+#define   CCLOCKWISE            (13)
+#define   STOP5                 (16)
+#define   NULLSTATE             (18)
+#define   MINI_TIMER            (50)
+#define   MAX_TIMEZ             (500)
+
+//interrupt_ADC.c
+#define   CHANNEL_A2            (0x01)
+#define   CHANNEL_A3            (0x02)
+#define   CHANNEL_A5            (0x03)
+#define   SHIFT_2               (2)
+#define   DISP_LINE1            (1)
+#define   DISP_LINE2            (2)
+#define   DISP_LINE3            (3)
+#define   INDEX0                (0)
+#define   INDEX1                (1)
+#define   INDEX2                (2)
+#define   INDEX3                (3)
+#define   INDEX4                (4)
+#define   INDEX5                (5)
+#define   INDEX6                (6)
+#define   INDEX7                (7)
+#define   INDEX8                (8)
+#define   INDEX9                (9)
+#define   INDEX10               (10)
+#define   THUMB_LINE            (6)
+#define   R_LINE                (3)
+#define   L_LINE                (3)
+#define   ASCII_OFFSET          (0x30)
+#define   THOUS                 (1000)
+#define   TH_LIMIT              (999)
+#define   HUNDRED               (100) 
+#define   H_LIMIT               (99)
+#define   TEN                   (10)
+#define   TEN_LIMIT             (9)
+#define   WHITE_SPACE           (7)
+#define   LINE_STATE            (8)
+
+//interrupt_ports
+#define DB_TIME                 (50)
+
+//interrupt_UART
+#define FIRST_CHAR              (0)
+#define VALID_CONN              (1)
+#define VALID_COMM              (2)
+#define FILL_BUFF               (3)
+#define ESC                     (0x1B)
+#define IP_VAL                  (1)
+#define IP_FILL                 (2)
+#define IP_LEN                  (8)
+#define IP_END                  (13)
+#define SEVEN                   (7)
+
+//USCI_A
+#define BEGINNING               (0)
+#define SMALL_RING_SIZE         (16)
+#define baud1                   (460800)
+#define baud2                   (115200)
+#define ALL_CASES               (0x08)
+#define VECTOR0                 (0)
+#define VECTOR2                 (2)
+#define VECTOR4                 (4)
+#define CHAR0                   (0)
+#define CHAR1                   (1)
+#define CHAR2                   (2)
+#define CHAR3                   (3)
+#define CHAR4                   (4)
+#define CHAR5                   (5)
+#define CHAR6                   (6)
+#define CHAR7                   (7)
+#define CHAR8                   (8)
+#define CHAR_RET                (9)
+#define LINE_F                  (10)
+#define C_R                     (0x0D)
+#define L_F                     (0x0A)
+
+//serial.c
+#define BRW4                    (4)
+#define TLW55                   (0x5551)
+#define BRW52                   (52)
+#define TLW49                   (0x4911)
+#define LARGE_RING_SIZE         (32)
+#define QUEUE_SIZE              (256)
